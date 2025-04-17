@@ -21,7 +21,7 @@ class SearchedNotesCubit extends Cubit<SearchedNotesState> {
                 note.title.toLowerCase().contains(query.toLowerCase()))
             .toList();
       } else {
-        searchedNotes = [];
+        searchedNotes = const [];
       }
 
       emit(GetSearchedNotesLoaded(searchedNotes: searchedNotes));
@@ -29,7 +29,8 @@ class SearchedNotesCubit extends Cubit<SearchedNotesState> {
       emit(NoNotesToSearch(message: 'There are no notes to search for'));
     }
   }
+
   void clearSearch() {
-  emit(GetSearchedNotesLoaded(searchedNotes: const[]));
-}
+    emit(GetSearchedNotesLoaded(searchedNotes: const []));
+  }
 }

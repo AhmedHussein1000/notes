@@ -26,6 +26,7 @@ class _NotesScreenBodyState extends State<NotesScreenBody> {
 
   @override
   void dispose() {
+    _debounce?.cancel();
     searchController.dispose();
     super.dispose();
   }
